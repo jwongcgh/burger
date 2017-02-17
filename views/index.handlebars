@@ -1,0 +1,55 @@
+<h1>Burgers</h1>
+<div>
+<img src="assets/img/burger12.jpg" alt="image of a delicious burger">
+</div>
+
+
+<div class=row>
+  <div class=column>
+
+    <ul>
+      <!-- thus we loop through burgers in the hbsObject  -->
+      {{#each burgers}}
+      {{#unless this.devoured}}
+      <li>
+        {{ this.id }}. {{ this.burger_name}}. {{this.devoured}}
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button type="submit">Gobble it up</button>
+        </form>
+      </li>
+      {{/unless}}
+      {{/each}}
+    </ul>
+</div>
+
+<!-- devoured burgers list -->
+
+<div class=column>
+<h2>Happy memories</h2>
+</div>
+<ul>
+  <!-- thus we loop through burgers in the hbsObject  -->
+  {{#each burgers}}
+  {{#if this.devoured}}
+  <li>
+    {{ this.id }}. {{ this.burger_name}}. {{this.devoured}}
+  </li>
+  {{/if}}
+  {{/each}}
+</ul>
+</div>
+
+
+<!-- add new burger field -->
+
+<div class=row>
+<h3>Add a burger</h3>
+<form action="/new" method="post">
+  <field>
+    <label for="newBurg">Name your new burger</label>
+    <input type="text" name="newBurger">
+  </field>
+  <button type="submit">Add burger</button>
+</form>
+</div>

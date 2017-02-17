@@ -1,0 +1,18 @@
+html, body {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 640px;
+  background-image: url("./assets/img/burger12.jpg");
+	background-size: cover;
+}
+
+
+
+img {
+  width: 30%;
+  height: auto;
+}
+
+.column {
+  float: left;
+}
