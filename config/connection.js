@@ -11,7 +11,7 @@ var connectionInfo = {
 }
 
 if (process.env.JAWSDB_URL) {
-    connectionInfo = process.env.JAWSDB_URL
+    connectionInfo = process.env.JAWSDB_URL;
 }
 
 var connection = mysql.createConnection(connectionInfo);
